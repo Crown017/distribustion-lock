@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.distributionlock.distributionlock.mapper.GoodsMapper">
+
+    <select id="getGoodsById" resultType="com.distributionlock.distributionlock.entity.Goods">
+        SELECT *
+        FROM goods
+        where goodsId = #{goodsId}
+    </select>
+
+    <update id="updateStockById" >
+        update goods
+        set stock = #{stock}
+        where goodsId = #{goodsId}
+    </update>
+</mapper>
